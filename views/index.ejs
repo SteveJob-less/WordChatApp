@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Chat Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="element-interactions.js"></script>
+</head>
+<body class="bg-[#564146] opacity-1">
+    <h1 class="text-center font-bold text-6xl text-[#ed8ea7] tracking-widest my-3">WORD CHAT GAME</h1>
+    <main class="bg-[#bea5aa] bg-opacity-40 border-4 rounded-xl border-[#ed8ea7] w-[900px] mx-auto mt-4 pt-4 pb-6 px-16">
+        <h3 id="guess-word" class="text-center text-white font-bold text-5xl tracking-widest mt-[-10px]"><%= word.toAnswer %></h3>
+        <section id="chatbox-wrapper" class="relative my-5">
+            <div id="chat-box" class="bg-black bg-opacity-20 text-white py-2 px-3 h-[320px] overflow-auto border-2 border-[#ed8ea7] rounded mb-6"></div>
+            <div class="px-5 rounded active-users w-[200px] h-[70px] border border-[#ed8ea7] absolute top-3 right-7 flex flex-col justify-around py-1 bg-white bg-opacity-10">
+                <h4 class="text-center text-white font-bold">Name: <span id="name"></span></h4>
+                <h4 class="font-bold text-center text-xl text-[#bda962]">level: <span id="difficulty-placeholder"> <%= difficulty %> </span></h4>
+            </div>
+            <div class="overflow-y-auto px-5 rounded active-users w-[200px] h-[210px] border border-[#ed8ea7] absolute top-24 right-7 bg-white bg-opacity-10">
+                <h4 class="text-center text-white font-bold my-1">Connected</h4>
+                <div class="max-w-[126px] mx-2 text-white" id="user-container"></div>
+            </div>
+        </section>
+        <section class="input_wraper">
+            <form class="w-[650px] mx-auto px-10 text-2xl flex justify-evenly" action="">
+                <input class="bg-white bg-opacity-10 rounded-xl border border-[#ed8ea7] p-2 w-[420px] text-white" type="text" name="chat" id="chat-input">
+                <button class="rounded-xl border font-bold border-[#ed8ea7] py-2 px-4 bg-[#564146] bg-opacity-70 text-[#bea5aa]" id="submit" type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
