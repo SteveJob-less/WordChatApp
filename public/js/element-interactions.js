@@ -1,4 +1,6 @@
-// TO REFACTOR: separate the functions for dom and socket interactions, add minimal animation and styling
+// TO REFACTOR: Conver to OOP and separate the functions for dom and socket interactions
+// TO REFACTOR: Add minimal animation and styling
+
 $(document).ready(() => { 
     const submitBtn = document.getElementById("submit");
     const inputElement = document.getElementById("chat-input");
