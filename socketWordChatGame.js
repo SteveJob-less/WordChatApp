@@ -17,9 +17,7 @@ export default class WordChatGame {
         socket.emit("input-name", () => this.loadGameData());
 
         // Proceed to handleUserJoin (add user to this.connectedUsers with their unique socket.id);
-        socket.on("set-name", (data) => {
-            console.log(`set-name:  ${data.name} -> push to server's users array`);
-            
+        socket.on("set-name", (data) => {            
             this.handleUserJoin(socket, data);
         });
 
@@ -67,7 +65,6 @@ export default class WordChatGame {
             const disconnectedUser = this.connectedUsers[socket.id];
             const text = `${disconnectedUser.name} left the game.`;
             saveText(text, this.convo);
-            console.log(`handleDisconnect(); ${text}`);
 
             delete this.connectedUsers[socket.id];
             socket.broadcast.emit("rerender-user-list", { users: this.connectedUsers });
@@ -131,8 +128,6 @@ export default class WordChatGame {
 
     // Load the game data to the client
     loadGameData(socket) {
-        console.log("loadGameData: ", this.getGameData());
-
         socket.emit("load-game", this.getGameData());
     }
 
