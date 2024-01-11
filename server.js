@@ -18,7 +18,7 @@ app.get("/element-interactions.js", (req, res) => {
 });
 
 app.get("/ss.png", (req, res) => {
-    res.sendFile(`${__dirname}/public/screenshots/ss.png`);
+    res.sendFile(`${__dirname}/public/screenshots/ss1.png`);
 });
 
 app.get("/ss2.png", (req, res) => {
