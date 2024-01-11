@@ -16,14 +16,16 @@ app.set("view engine", "ejs");
 app.get("/element-interactions.js", (req, res) => {
     res.sendFile(`${__dirname}/public/js/element-interactions.js`);
 });
+
 app.get("/ss.png", (req, res) => {
     res.sendFile(`${__dirname}/public/screenshots/ss.png`);
 });
+
 app.get("/ss2.png", (req, res) => {
     res.sendFile(`${__dirname}/public/screenshots/ss2.png`);
 });
+
 app.get("/", (req, res) => {
     const { users, difficulty, word } = WordChatServer.getGameData(); // To initial load the current game data when client connects
-
     res.render("index", { users, difficulty, word });
 });
