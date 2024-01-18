@@ -4,7 +4,7 @@ import { Server } from "socket.io";
 import WordChatGame from "./socketWordChatGame.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
-const port = 4321;
+const port = 3000;
 const app = express();
 const serverPort = app.listen(port, () => console.log(`Server Port: ${port}`));
 const io = new Server(serverPort);
