@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  web_app:
+    build: ./
+    restart: always
+    command: nodemon server.js
+    volumes:
+      - ./:/var/www/app
+    ports:
+      - 3111:3000
